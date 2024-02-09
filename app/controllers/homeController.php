@@ -4,6 +4,6 @@
     {
         public function index()
         {
-           $this->view('home/index', ['abc' => "hellooo"]);
+            $this->view('home/index');
         }
     }

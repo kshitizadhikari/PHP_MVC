@@ -1,6 +1,12 @@
 <?php
 
 class Controller {
+
+    public $db;
+    public function __construct()
+    {
+        $this->db = $this->model('Database');
+    }
     
     public function model($model) {
         require_once  '../app/models/' . $model . '.php';
@@ -9,7 +15,11 @@ class Controller {
 
     public function view($view, $data = []) {
         require_once  '../app/views/'  . $view . '.php';
-        
+    }
+
+    public function executeQuery($query, $params = [])
+    {
+        return $this->db->query($query, $params);
     }
 }
 
