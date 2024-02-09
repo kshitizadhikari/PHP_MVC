@@ -4,12 +4,17 @@
     {
         public function index()
         {
-            // $user = $this->model('User');
-            // $user->username = "ram";
-            // $user->email = "ram@gmail.com";
-            // $user->password = "ram123";
-            // $user->role = "admin";
-            // $result = $this->executeQuery("INSERT INTO users(username, email, password, role) VALUES(?, ?, ?, ?)", [$user->username, $user->email, $user->password, $user->role]);
-            $this->view('user/index');
+            // $user = new User;
+            // $user->username = "sam";
+            // $user->email = "sam@gmail.com";
+            // $user->password = "sam123";
+            // $user->role = "user";
+            
+            $userMapper = new GenericMapper($this->db, 'users');
+            // $userMapper->save($user);
+
+            $result = $userMapper->findById(1);
+
+            $this->view('user/index', ['result' => $result]); 
         }
     }

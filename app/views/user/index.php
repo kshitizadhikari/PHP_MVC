@@ -1,1 +1,4 @@
-This is the user's index view
+<?php 
+    echo $data['result']['id'];
+?>
+ 
