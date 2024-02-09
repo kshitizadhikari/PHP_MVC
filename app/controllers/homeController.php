@@ -1,9 +1,9 @@
 <?php
+
     class HomeController extends Controller
     {
         public function index()
         {
-            echo "public/home/index";
+           echo "home controller index method called";
         }
-        
     }
