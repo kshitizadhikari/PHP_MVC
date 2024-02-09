@@ -4,6 +4,6 @@
     {
         public function index()
         {
-           echo "home controller index method called";
+           $this->view('home/index', ['abc' => "hellooo"]);
         }
     }
