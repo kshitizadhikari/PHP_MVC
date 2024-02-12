@@ -43,6 +43,7 @@
                 $user->id = $_POST['id'];
                 $user->username = $_POST['username'];
                 $user->email = $_POST['email'];
+                $user->role = $_POST['role'];
                 $user->password = $_POST['password'];
                 $userMapper->update($user);
                 

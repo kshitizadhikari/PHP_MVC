@@ -4,7 +4,7 @@ if(isset($data['user'])) {
 }
 ?>
 <form action="/MVC/public/user/editUser" method="POST">
-    <input type="text" value="<?php echo $user[0]['id']?>" name="id">
+    <input type="hidden" value="<?php echo $user[0]['id']?>" name="id">
     <div>
         <label>Name:</label>
         <input type="text" value="<?php echo $user[0]['username']?>" name="username">
@@ -16,6 +16,15 @@ if(isset($data['user'])) {
     <div>
         <label>Password:</label>
         <input type="password" value="<?php echo $user[0]['password']?>" name="password">
+    </div>
+    <div>
+        <label>Role:</label>
+        <select name="role">
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+            <option value="designer">Designer</option>
+            <option value="qa">QA</option>
+        </select>
     </div>
     <button>Update</button>
 </form>
