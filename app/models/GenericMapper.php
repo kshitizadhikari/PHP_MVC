@@ -48,7 +48,13 @@
             $values[] = $data['id']; // Add ID to values array
             return $this->db->query($sql, $values);
         }
-        
+
+
+        public function delete($id) {
+            $sql = "DELETE FROM $this->tableName WHERE id=?";
+            $result = $this->db->query($sql, [$id]);
+            return $result;
+        }
         
     }
 ?>

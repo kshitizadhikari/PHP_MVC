@@ -49,5 +49,16 @@
                 header("Location: /MVC/public/user/index");
 
             }
+
+            public function deleteUser($id)
+            {
+                $userMapper = new GenericMapper($this->db, 'users');
+                
+                if(!$userMapper->delete($id)){
+                    echo "User not found";
+                }
+                header("Location: /MVC/public/user/index");
+
+            }
             
         }

@@ -21,7 +21,8 @@ if(isset($data['result'])) {
         <tr>
             <td><?php echo $user['username'] ?></td>
             <td><?php echo $user['email'] ?></td>
-            <td><a href="edit/<?php echo $user['id']; ?>">Edit</a></td>
+            <td><a href="edit/<?php echo $user['id']; ?>">Edit</a> | 
+            <a href="deleteUser/<?php echo $user['id']; ?>">Delete</a></td>
         </tr>
     </tbody>
         <?php
