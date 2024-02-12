@@ -28,8 +28,8 @@ class App {
                 $this->method = $url[1];
                 unset($url[1]);
             }
-
         }
+        
 
         $this->params = $url ? array_values($url) : [];
         call_user_func_array([$this->controller, $this->method], $this->params);
@@ -39,7 +39,7 @@ class App {
     public function parseUrl() {
         if(isset($_GET['url'])) {
             // Explode the URL into segments and sanitize them
-            return $url = explode('/', filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL));
+            return explode('/', filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL));
         }
     }
 }

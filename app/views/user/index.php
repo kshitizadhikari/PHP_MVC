@@ -1,25 +1,31 @@
-<?php 
-// if(isset($data['result'])) {
-//     $user = $data['result'];
 
-//     echo "User ID: " . $user[0]['id'] . "<br>";
-//     echo "Username: " . $user[0]['username'] . "<br>";
-//     echo "Email: " . $user[0]['email'] . "<br>";
-// } else {
-//     echo "User not found.";
-// }
-?>
 
 <?php 
 if(isset($data['result'])) {
     $users = $data['result'];
-
-    foreach ($users as $user) {
-        echo "User ID: " . $user['id'] . "<br>";
-        echo "Username: " . $user['username'] . "<br>";
-        echo "Email: " . $user['email'] . "<br>";
-    }
-} else {
-    echo "No users found.";
 }
 ?>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>UserName</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($users as $user){
+            ?>
+        <tr>
+            <td><?php echo $user['username'] ?></td>
+            <td><?php echo $user['email'] ?></td>
+            <td><a href="edit/<?php echo $user['id']; ?>">Edit</a></td>
+        </tr>
+    </tbody>
+        <?php
+        }
+        ?>
+        
+</table>

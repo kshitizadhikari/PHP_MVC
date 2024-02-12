@@ -31,7 +31,6 @@
                     if ($this->stmt->execute($params)) {
                         return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
                     } else {
-                        // Query execution failed
                         echo "Query execution error: " . implode(", ", $this->stmt->errorInfo());
                         return false;
                     }

@@ -32,5 +32,23 @@
             $result = $this->db->query($sql);
             return $result;
         }
+
+        public function update($obj) {
+            $data = $this->getObjectData($obj);
+            $setClause = '';
+            $values = [];
+            foreach ($data as $key => $value) {
+                if ($key !== 'id') { // Skip ID field in SET clause
+                    $setClause .= "$key=?,";
+                    $values[] = $value;
+                }
+            }
+            $setClause = rtrim($setClause, ','); // Remove trailing comma
+            $sql = "UPDATE $this->tableName SET $setClause WHERE id=?";
+            $values[] = $data['id']; // Add ID to values array
+            return $this->db->query($sql, $values);
+        }
+        
+        
     }
 ?>
