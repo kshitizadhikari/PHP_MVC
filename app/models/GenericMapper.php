@@ -24,10 +24,13 @@
         public function findById($id) {
             $sql = "SELECT * FROM $this->tableName WHERE id=?";
             $result = $this->db->query($sql, [$id]);
-            print_r($result);
             return $result;
         }
-        
 
+        public function findAll() {
+            $sql = "SELECT * FROM $this->tableName";
+            $result = $this->db->query($sql);
+            return $result;
+        }
     }
 ?>

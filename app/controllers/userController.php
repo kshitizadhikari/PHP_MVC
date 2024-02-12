@@ -15,7 +15,11 @@
             // create new user
             // $userMapper->save($user);
 
-            $result = $userMapper->findById(1);
+            // Find user by id
+            // $result = $userMapper->findById(1);
+
+            // Find all users
+            $result =  $userMapper->findAll(); 
 
             $this->view('user/index', ['result' => $result]); 
         }
